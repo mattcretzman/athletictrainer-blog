@@ -20,6 +20,14 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
+                  href="https://www.athletictrainerjob.com"
+                  className="text-sand hover:text-white transition-colors"
+                >
+                  Main Site
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/"
                   className="text-sand hover:text-white transition-colors"
                 >

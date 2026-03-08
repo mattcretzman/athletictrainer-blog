@@ -32,6 +32,12 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link
+              href="https://www.athletictrainerjob.com"
+              className="text-white/80 hover:text-white font-medium transition-colors"
+            >
+              Main Site
+            </Link>
+            <Link
               href="/"
               className="text-white/80 hover:text-white font-medium transition-colors"
             >
@@ -78,6 +84,12 @@ export default function Navbar() {
         {/* Mobile Menu */}
         <div id="mobile-menu" className="hidden md:hidden pb-4 bg-navy">
           <div className="flex flex-col space-y-4">
+            <Link
+              href="https://www.athletictrainerjob.com"
+              className="text-white/80 hover:text-white font-medium"
+            >
+              Main Site
+            </Link>
             <Link
               href="/"
               className="text-white/80 hover:text-white font-medium"
