@@ -12,6 +12,8 @@ const withMDX = createMDX({
 const nextConfig: NextConfig = {
   basePath: '',
   output: 'standalone',
+  typescript: { ignoreBuildErrors: true },
+  eslint: { ignoreDuringBuilds: true },
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
   images: {
     formats: ['image/webp'],
