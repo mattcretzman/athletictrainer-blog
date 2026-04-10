@@ -21,6 +21,17 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'images.unsplash.com' },
     ],
   },
+  async rewrites() {
+    return {
+      beforeFiles: [
+        { source: '/', destination: '/home.html' },
+        { source: '/job-description', destination: '/job-description.html' },
+        { source: '/thankyou', destination: '/thankyou.html' },
+      ],
+      afterFiles: [],
+      fallback: [],
+    };
+  },
   async headers() {
     return [
       {

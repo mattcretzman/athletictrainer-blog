@@ -13,12 +13,12 @@ export default function CategoryPills({
   currentCategory,
 }: CategoryPillsProps) {
   const pathname = usePathname();
-  const isIndexPage = pathname === "/";
+  const isIndexPage = pathname === "/blog";
 
   return (
     <div className="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-hide">
       <Link
-        href="/"
+        href="/blog"
         className={`category-pill whitespace-nowrap ${
           isIndexPage && !currentCategory ? "bg-olive text-white shadow-md" : ""
         }`}
@@ -32,7 +32,7 @@ export default function CategoryPills({
         return (
           <Link
             key={category}
-            href={`/category/${slug}`}
+            href={`/blog/category/${slug}`}
             className={`category-pill whitespace-nowrap ${
               isActive ? "bg-olive text-white shadow-md" : ""
             }`}

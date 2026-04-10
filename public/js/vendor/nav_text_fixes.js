@@ -1,0 +1,1 @@
+document.querySelectorAll("a.nav-link").forEach(function(a){if(a.textContent.trim()==="Location")a.textContent="Locations";});

@@ -19,7 +19,7 @@ export default function ArticleSchema({ post, author }: ArticleSchemaProps) {
     author: {
       "@type": "Person",
       name: author?.name || "PSI Editorial Team",
-      url: author ? `https://www.athletictrainerjob.com/author/${author.slug}` : undefined,
+      url: author ? `https://www.athletictrainerjob.com/blog/author/${author.slug}` : undefined,
     },
     publisher: {
       "@type": "Organization",

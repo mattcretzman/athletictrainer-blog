@@ -32,25 +32,25 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link
-              href="https://www.athletictrainerjob.com"
+              href="/"
               className="text-white/80 hover:text-white font-medium transition-colors"
             >
-              Main Site
+              Home
             </Link>
             <Link
-              href="/"
+              href="/blog"
               className="text-white/80 hover:text-white font-medium transition-colors"
             >
               Blog
             </Link>
             <Link
-              href="https://www.athletictrainerjob.com/job-description"
+              href="/job-description"
               className="text-white/80 hover:text-white font-medium transition-colors"
             >
               Job Description
             </Link>
             <Link
-              href="https://www.athletictrainerjob.com/job-description#apply-main"
+              href="/job-description#apply-main"
               className="btn-accent inline-flex items-center gap-2"
             >
               Apply Now
@@ -85,25 +85,25 @@ export default function Navbar() {
         <div id="mobile-menu" className="hidden md:hidden pb-4 bg-navy">
           <div className="flex flex-col space-y-4">
             <Link
-              href="https://www.athletictrainerjob.com"
+              href="/"
               className="text-white/80 hover:text-white font-medium"
             >
-              Main Site
+              Home
             </Link>
             <Link
-              href="/"
+              href="/blog"
               className="text-white/80 hover:text-white font-medium"
             >
               Blog
             </Link>
             <Link
-              href="https://www.athletictrainerjob.com/job-description"
+              href="/job-description"
               className="text-white/80 hover:text-white font-medium"
             >
               Job Description
             </Link>
             <Link
-              href="https://www.athletictrainerjob.com/job-description#apply-main"
+              href="/job-description#apply-main"
               className="btn-accent inline-flex items-center justify-center gap-2"
             >
               Apply Now

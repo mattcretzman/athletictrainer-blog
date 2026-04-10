@@ -12,7 +12,7 @@ export default function CTABanner() {
           and Marine Corps SMIP programs across the United States.
         </p>
         <Link
-          href="https://www.athletictrainerjob.com/job-description#apply-main"
+          href="/job-description#apply-main"
           className="btn-accent inline-flex items-center gap-2"
         >
           Apply Now

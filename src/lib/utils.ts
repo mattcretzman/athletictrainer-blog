@@ -39,13 +39,13 @@ export function createExcerpt(content: string, maxLength: number = 160): string 
 export function generateBreadcrumbs(slug: string, category?: string) {
   const breadcrumbs = [
     { label: "Home", href: "/" },
-    { label: "Blog", href: "/" },
+    { label: "Blog", href: "/blog" },
   ];
 
   if (category) {
     breadcrumbs.push({
       label: category,
-      href: `/category/${slugify(category)}`,
+      href: `/blog/category/${slugify(category)}`,
     });
   }
 
