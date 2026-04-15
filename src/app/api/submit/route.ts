@@ -18,6 +18,7 @@ export async function POST(request: NextRequest) {
           base_locations: body["base_locations"] ?? "",
           "Years Experience": body["Years Experience"] ?? "",
           Time: body["Time"] ?? "",
+          "Heard About": body["Heard About"] ?? "",
           File: body["File"] ?? "",
         },
       },
@@ -29,7 +30,7 @@ export async function POST(request: NextRequest) {
       body: JSON.stringify(payload),
     });
 
-    if (!res.ok) {
+    if (\!res.ok) {
       return NextResponse.json(
         { error: "Webhook failed", status: res.status },
         { status: 502 }
