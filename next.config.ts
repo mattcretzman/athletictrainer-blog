@@ -26,7 +26,11 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return {
       beforeFiles: [
-        { source: '/', destination: '/home.html' },
+        {
+          source: '/',
+          destination: '/home.html',
+          has: [{ type: 'host', value: '(?!blog\\.).*' }],
+        },
         { source: '/job-description', destination: '/job-description.html' },
         { source: '/thankyou', destination: '/thankyou.html' },
       ],
