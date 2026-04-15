@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (link.textContent.trim() === 'Community') communityLink = link;
   });
   if (!communityLink) return;
-  if (document.querySelector('a.nav-link[href="https://blog.athletictrainerjob.com"]')) return;
+  if (document.querySelector('a.nav-link[href="https://blog.athletictrainerjob.com/blog"]')) return;
   var blogLink = communityLink.cloneNode(true);
   blogLink.textContent = 'Blog';
-  blogLink.href = 'https://blog.athletictrainerjob.com';
+  blogLink.href = 'https://blog.athletictrainerjob.com/blog';
   var parent = communityLink.parentNode;
   if (parent.tagName === 'LI') {
     var newLi = document.createElement('li');
