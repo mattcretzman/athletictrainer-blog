@@ -26,7 +26,7 @@ export default function JobCTA({ location, program }: JobCTAProps) {
         advancing your athletic training career.
       </p>
       <Link
-        href="https://www.athletictrainerjob.com/job-description#apply-main"
+        href="/job-description#apply-main"
         className="btn-accent inline-flex items-center gap-2"
       >
         {ctaText}

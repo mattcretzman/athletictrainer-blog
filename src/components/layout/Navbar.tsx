@@ -25,32 +25,32 @@ export default function Navbar() {
       <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
+          <a href="https://athletictrainerjob.com" className="flex-shrink-0">
             <div className="text-white font-bold text-xl">AthleticTrainerJob.com</div>
-          </Link>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link
-              href="https://www.athletictrainerjob.com"
+            <a
+              href="https://athletictrainerjob.com"
               className="text-white/80 hover:text-white font-medium transition-colors"
             >
-              Main Site
-            </Link>
+              Home
+            </a>
             <Link
-              href="/"
+              href="/blog"
               className="text-white/80 hover:text-white font-medium transition-colors"
             >
               Blog
             </Link>
             <Link
-              href="https://www.athletictrainerjob.com/job-description"
+              href="/job-description"
               className="text-white/80 hover:text-white font-medium transition-colors"
             >
               Job Description
             </Link>
             <Link
-              href="https://www.athletictrainerjob.com/job-description#apply-main"
+              href="/job-description#apply-main"
               className="btn-accent inline-flex items-center gap-2"
             >
               Apply Now
@@ -84,26 +84,26 @@ export default function Navbar() {
         {/* Mobile Menu */}
         <div id="mobile-menu" className="hidden md:hidden pb-4 bg-navy">
           <div className="flex flex-col space-y-4">
-            <Link
-              href="https://www.athletictrainerjob.com"
+            <a
+              href="https://athletictrainerjob.com"
               className="text-white/80 hover:text-white font-medium"
             >
-              Main Site
-            </Link>
+              Home
+            </a>
             <Link
-              href="/"
+              href="/blog"
               className="text-white/80 hover:text-white font-medium"
             >
               Blog
             </Link>
             <Link
-              href="https://www.athletictrainerjob.com/job-description"
+              href="/job-description"
               className="text-white/80 hover:text-white font-medium"
             >
               Job Description
             </Link>
             <Link
-              href="https://www.athletictrainerjob.com/job-description#apply-main"
+              href="/job-description#apply-main"
               className="btn-accent inline-flex items-center justify-center gap-2"
             >
               Apply Now

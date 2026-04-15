@@ -17,7 +17,7 @@ export default function Sidebar({ featuredPosts }: SidebarProps) {
           {featuredPosts.map((post) => (
             <Link
               key={post.slug}
-              href={`/${post.slug}`}
+              href={`/blog/${post.slug}`}
               className="block group"
             >
               <h4 className="text-sm font-medium text-charcoal group-hover:text-olive transition-colors line-clamp-2 mb-1">
@@ -40,7 +40,7 @@ export default function Sidebar({ featuredPosts }: SidebarProps) {
             programs across the United States.
           </p>
           <Link
-            href="https://www.athletictrainerjob.com/job-description#apply-main"
+            href="/job-description#apply-main"
             className="btn-accent w-full text-center inline-flex items-center justify-center gap-2"
           >
             Apply Now

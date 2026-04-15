@@ -20,15 +20,15 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="https://www.athletictrainerjob.com"
+                  href="/"
                   className="text-sand hover:text-white transition-colors"
                 >
-                  Main Site
+                  Home
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/"
+                  href="/blog"
                   className="text-sand hover:text-white transition-colors"
                 >
                   Blog
@@ -36,7 +36,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="https://www.athletictrainerjob.com/job-description"
+                  href="/job-description"
                   className="text-sand hover:text-white transition-colors"
                 >
                   Job Description
@@ -44,7 +44,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="https://www.athletictrainerjob.com/job-description#apply-main"
+                  href="/job-description#apply-main"
                   className="text-sand hover:text-white transition-colors"
                 >
                   Apply Now

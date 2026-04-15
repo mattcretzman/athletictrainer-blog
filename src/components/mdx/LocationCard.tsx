@@ -38,7 +38,7 @@ export default function LocationCard({
           <p className="text-gray-text text-sm mb-4">{description}</p>
         )}
         <Link
-          href="https://www.athletictrainerjob.com/job-description"
+          href="/job-description"
           className="text-primary hover:text-accent font-medium text-sm inline-flex items-center gap-1 transition-colors"
         >
           View Opportunities

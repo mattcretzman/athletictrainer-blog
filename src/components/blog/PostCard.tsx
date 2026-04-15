@@ -12,7 +12,7 @@ export default function PostCard({ post }: PostCardProps) {
 
   return (
     <article className="bg-warm-white rounded-lg overflow-hidden group transition-all hover:shadow-lg" style={{ border: '1px solid rgba(184, 168, 138, 0.4)' }}>
-      <Link href={`/${slug}`} className="block relative">
+      <Link href={`/blog/${slug}`} className="block relative">
         <div className="absolute inset-0 border-l-0 group-hover:border-l-3 border-olive transition-all z-10 pointer-events-none" />
         <div className="relative aspect-video overflow-hidden bg-charcoal topo-texture-dark">
           {frontmatter.featuredImage && (
@@ -30,14 +30,14 @@ export default function PostCard({ post }: PostCardProps) {
       <div className="p-6">
         <div className="mb-3">
           <Link
-            href={`/category/${frontmatter.category.toLowerCase().replace(/\s+/g, "-")}`}
+            href={`/blog/category/${frontmatter.category.toLowerCase().replace(/\s+/g, "-")}`}
             className="category-pill"
           >
             {frontmatter.category}
           </Link>
         </div>
 
-        <Link href={`/${slug}`}>
+        <Link href={`/blog/${slug}`}>
           <h3 className="text-xl font-semibold text-charcoal mb-3 group-hover:text-olive transition-colors line-clamp-2">
             {frontmatter.title}
           </h3>
