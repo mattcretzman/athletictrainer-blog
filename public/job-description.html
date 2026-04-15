@@ -139,6 +139,7 @@
                         <option value="Evening (5pm-8pm ET)">Evening (5pm-8pm ET)</option>
                       </select></div>
                     <div class="label-wrap"><label for="Linkedin" class="field-label">Linkedin URL</label><input class="text-field w-input" maxlength="256" name="Linkedin" data-name="Linkedin" placeholder="Linkedin Profile URL" type="url" id="Linkedin"></div>
+                    <div class="label-wrap"><label for="heard-about" class="field-label">How did you hear about us? <span class="required-text">*</span></label><select id="heard-about" name="Heard About" data-name="Heard About" required="" class="select-field w-select"><option value="">Select an option...</option><option value="LinkedIn">LinkedIn</option><option value="Email">Email</option><option value="Google Search">Google Search</option><option value="Instagram">Instagram</option><option value="TikTok">TikTok</option><option value="Referral / Word of Mouth">Referral / Word of Mouth</option><option value="Job Board">Job Board</option><option value="Other">Other</option></select></div>
                     <div class="label-wrap is-hidden"><label for="time" class="field-label">Your Resume</label><file-uploader></file-uploader></div>
                     <div data-sitekey="6Lc2LG4rAAAAAGYEq3DJX0fyfxJJpBc0eI9_fidZ" class="w-form-formrecaptcha g-recaptcha g-recaptcha-error g-recaptcha-disabled"></div><input type="submit" data-wait="Please wait..." class="primary-button w-button" value="Submit Interest ➜">
                   </form>
@@ -823,6 +824,7 @@ document.addEventListener("DOMContentLoaded", function () {
       'Years Experience': form.querySelector('#years-experience').value,
       'base_locations': form.querySelector('#base-locations-value').value,
       'Time': form.querySelector('#time').value,
+      'Heard About': form.querySelector('#heard-about').value,
       'File': ''
     };
     fetch('/api/submit', {
