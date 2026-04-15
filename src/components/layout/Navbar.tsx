@@ -25,18 +25,18 @@ export default function Navbar() {
       <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
+          <a href="https://athletictrainerjob.com" className="flex-shrink-0">
             <div className="text-white font-bold text-xl">AthleticTrainerJob.com</div>
-          </Link>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link
-              href="/"
+            <a
+              href="https://athletictrainerjob.com"
               className="text-white/80 hover:text-white font-medium transition-colors"
             >
               Home
-            </Link>
+            </a>
             <Link
               href="/blog"
               className="text-white/80 hover:text-white font-medium transition-colors"
@@ -84,12 +84,12 @@ export default function Navbar() {
         {/* Mobile Menu */}
         <div id="mobile-menu" className="hidden md:hidden pb-4 bg-navy">
           <div className="flex flex-col space-y-4">
-            <Link
-              href="/"
+            <a
+              href="https://athletictrainerjob.com"
               className="text-white/80 hover:text-white font-medium"
             >
               Home
-            </Link>
+            </a>
             <Link
               href="/blog"
               className="text-white/80 hover:text-white font-medium"
