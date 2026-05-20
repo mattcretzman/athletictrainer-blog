@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
       body: JSON.stringify(payload),
     });
 
-    if (\!res.ok) {
+    if (!res.ok) {
       return NextResponse.json(
         { error: "Webhook failed", status: res.status },
         { status: 502 }
