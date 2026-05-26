@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default async function BlogIndex({ searchParams }: BlogIndexProps) {
   const { page: pageParam } = await searchParams;
   const page = Number(pageParam) || 1;
-  const { posts, pagination } = getPaginatedPosts(page, 9);
+  const { posts, pagination } = getPaginatedPosts(page, 30);
   const categories = getAllCategories();
   const featuredPosts = getFeaturedPosts(4);
 
