@@ -54,6 +54,11 @@ export function getAllPosts(): Post[] {
         return null;
       }
 
+      // Skip future-dated posts (drip publishing)
+      if (data.date && new Date(data.date) > new Date()) {
+        return null;
+      }
+
       return {
         slug,
         frontmatter: {
