@@ -3,6 +3,7 @@ interface UnsplashImage {
   alt: string;
   credit: string;
   downloadUrl: string;
+  photoId: string;
 }
 
 const UNSPLASH_API = "https://api.unsplash.com";
@@ -21,10 +22,11 @@ const CATEGORY_QUERIES: Record<string, string> = {
 export async function fetchUnsplashImage(
   primaryKeyword: string,
   category: string,
-  tags: string[]
+  tags: string[],
+  usedPhotoIds: Set<string> = new Set()
 ): Promise<UnsplashImage | null> {
   const accessKey = process.env.UNSPLASH_ACCESS_KEY;
-  
+
   if (!accessKey) {
     console.warn("⚠️  UNSPLASH_ACCESS_KEY not set, skipping image fetch");
     return null;
@@ -43,7 +45,7 @@ export async function fetchUnsplashImage(
       const res = await fetch(
         `${UNSPLASH_API}/search/photos?query=${encodeURIComponent(
           query
-        )}&orientation=landscape&per_page=5&content_filter=high`,
+        )}&orientation=landscape&per_page=30&content_filter=high`,
         {
           headers: { Authorization: `Client-ID ${accessKey}` },
         }
@@ -56,14 +58,25 @@ export async function fetchUnsplashImage(
 
       const data = await res.json();
       if (data.results && data.results.length > 0) {
-        const photo = data.results[0];
-        console.log(`✅ Found Unsplash image for "${query}"`);
-        
+        // Filter out already-used photos
+        const available = data.results.filter(
+          (p: any) => !usedPhotoIds.has(p.id)
+        );
+
+        if (available.length === 0) {
+          console.log(`⚠️  All results for "${query}" already used, trying next query`);
+          continue;
+        }
+
+        const photo = available[0];
+        console.log(`✅ Found Unsplash image for "${query}" (photo ${photo.id}, ${available.length} available)`);
+
         return {
           url: `${photo.urls.regular}&w=1200&h=675&fit=crop`,
           alt: photo.alt_description || photo.description || `${category} - ${primaryKeyword}`,
           credit: `Photo by ${photo.user.name} on Unsplash`,
           downloadUrl: photo.links.download_location,
+          photoId: photo.id,
         };
       }
     } catch (err) {

@@ -13,10 +13,49 @@ interface PostFrontmatter {
   tags: string[];
 }
 
-export async function resolvePostImage(post: PostFrontmatter): Promise<{
+interface ImageLedgerEntry {
+  photoId: string;
+  slug: string;
+  path: string;
+  credit: string;
+}
+
+const LEDGER_PATH = path.join(
+  process.cwd(),
+  "public",
+  "images",
+  "blog",
+  ".image-ledger.json"
+);
+
+export function loadImageLedger(): ImageLedgerEntry[] {
+  if (fs.existsSync(LEDGER_PATH)) {
+    try {
+      return JSON.parse(fs.readFileSync(LEDGER_PATH, "utf-8"));
+    } catch {
+      return [];
+    }
+  }
+  return [];
+}
+
+export function saveImageLedger(ledger: ImageLedgerEntry[]): void {
+  fs.mkdirSync(path.dirname(LEDGER_PATH), { recursive: true });
+  fs.writeFileSync(LEDGER_PATH, JSON.stringify(ledger, null, 2));
+}
+
+export function getUsedPhotoIds(ledger: ImageLedgerEntry[]): Set<string> {
+  return new Set(ledger.map((e) => e.photoId));
+}
+
+export async function resolvePostImage(
+  post: PostFrontmatter,
+  usedPhotoIds: Set<string>
+): Promise<{
   featuredImage: string;
   featuredImageAlt: string;
   imageCredit?: string;
+  photoId?: string;
 }> {
   // If a real image path exists and the file is present, use it
   if (
@@ -36,11 +75,12 @@ export async function resolvePostImage(post: PostFrontmatter): Promise<{
 
   console.log(`🔍 Fetching Unsplash image for: ${post.slug}`);
 
-  // Fetch from Unsplash
+  // Fetch from Unsplash, passing used IDs to avoid duplicates
   const image = await fetchUnsplashImage(
     post.primaryKeyword,
     post.category,
-    post.tags
+    post.tags,
+    usedPhotoIds
   );
 
   if (image) {
@@ -80,10 +120,14 @@ export async function resolvePostImage(post: PostFrontmatter): Promise<{
         // Track download per Unsplash guidelines
         await trackUnsplashDownload(image.downloadUrl);
 
+        // Mark this photo as used immediately
+        usedPhotoIds.add(image.photoId);
+
         return {
           featuredImage: localPath,
           featuredImageAlt: image.alt,
           imageCredit: image.credit,
+          photoId: image.photoId,
         };
       }
     } catch (err) {
