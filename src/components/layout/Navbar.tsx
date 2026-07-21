@@ -44,6 +44,12 @@ export default function Navbar() {
               Blog
             </Link>
             <Link
+              href="/webinars"
+              className="text-white/80 hover:text-white font-medium transition-colors"
+            >
+              Webinars
+            </Link>
+            <Link
               href="/job-description"
               className="text-white/80 hover:text-white font-medium transition-colors"
             >
@@ -95,6 +101,12 @@ export default function Navbar() {
               className="text-white/80 hover:text-white font-medium"
             >
               Blog
+            </Link>
+            <Link
+              href="/webinars"
+              className="text-white/80 hover:text-white font-medium"
+            >
+              Webinars
             </Link>
             <Link
               href="/job-description"

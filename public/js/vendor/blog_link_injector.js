@@ -13,6 +13,15 @@ document.addEventListener('DOMContentLoaded', function() {
     var newLi = document.createElement('li');
     newLi.appendChild(blogLink);
     parent.parentNode.insertBefore(newLi, parent.nextSibling);
+    // Add Webinars link after Blog
+    if (!document.querySelector('a.nav-link[href="/webinars"]')) {
+      var webinarLink = communityLink.cloneNode(true);
+      webinarLink.textContent = 'Webinars';
+      webinarLink.href = '/webinars';
+      var webinarLi = document.createElement('li');
+      webinarLi.appendChild(webinarLink);
+      newLi.parentNode.insertBefore(webinarLi, newLi.nextSibling);
+    }
   } else {
     parent.insertBefore(blogLink, communityLink.nextSibling);
   }
