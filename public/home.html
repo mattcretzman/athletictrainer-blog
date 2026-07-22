@@ -129,19 +129,25 @@
         </div>
       </div>
     </div>
-    <!-- Webinar Promo Banner -->
-    <div id="webinar-banner" style="background: linear-gradient(135deg, #1B3A5F 0%, #0d2240 100%); color: #fff; padding: 14px 0; position: relative; z-index: 40; border-bottom: 3px solid #C41E2A;">
-      <div class="container-main" style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
-        <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px 24px; text-align: center;">
-          <div style="display: flex; align-items: center; gap: 10px;">
-            <span style="background: #C41E2A; color: #fff; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; border-radius: 4px; white-space: nowrap;">Free Webinar</span>
-            <span style="font-size: 16px; font-weight: 600; font-family: Poppins, sans-serif;">Level Up Your ATC Career</span>
-          </div>
-          <span style="font-size: 14px; opacity: 0.85; font-family: Poppins, sans-serif;">Thursday, July 30 at 12:30 PM ET</span>
-          <a href="/webinars/level-up-your-atc-career" style="background: #C41E2A; color: #fff; text-decoration: none; font-size: 14px; font-weight: 600; padding: 8px 20px; border-radius: 6px; font-family: Poppins, sans-serif; white-space: nowrap; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">Register Now &#10140;</a>
-        </div>
-      </div>
-    </div>
+    <!-- Webinar Promo Banner (injected via JS to work with fixed navbar) -->
+    <script>
+    (function(){
+      var b = document.createElement('div');
+      b.id = 'webinar-banner';
+      b.innerHTML = '<div style="max-width:1200px;margin:0 auto;padding:0 24px;"><div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px 20px;text-align:center;"><div style="display:flex;align-items:center;gap:8px;"><span style="background:#C41E2A;color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:3px 8px;border-radius:3px;white-space:nowrap;">Free Webinar</span><span style="font-size:15px;font-weight:600;font-family:Poppins,sans-serif;">Level Up Your ATC Career</span></div><span style="font-size:13px;opacity:0.85;font-family:Poppins,sans-serif;">Thu, July 30 &middot; 12:30 PM ET</span><a href="/webinars/level-up-your-atc-career" style="background:#C41E2A;color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:6px 16px;border-radius:5px;font-family:Poppins,sans-serif;white-space:nowrap;">Register Free &rarr;</a></div></div>';
+      b.style.cssText = 'background:linear-gradient(135deg,#0d2240 0%,#1B3A5F 100%);color:#fff;padding:10px 0;position:fixed;top:0;left:0;right:0;z-index:1000;border-bottom:2px solid #C41E2A;box-shadow:0 2px 8px rgba(0,0,0,0.3);';
+      document.addEventListener('DOMContentLoaded', function(){
+        document.body.prepend(b);
+        var nav = document.querySelector('.navbar-no-shadow');
+        if(nav){
+          var bannerH = b.offsetHeight;
+          nav.style.top = bannerH + 'px';
+          var hero = document.querySelector('.section.is-hero');
+          if(hero) hero.style.paddingTop = (bannerH) + 'px';
+        }
+      });
+    })();
+    </script>
     <!-- End Webinar Promo Banner -->
     <div class="section is-hero">
       <div data-poster-url="videos/Hero-Video-Finale-poster-00001.jpg" data-video-urls="videos/Hero-Video-Finale-transcode.mp4,videos/Hero-Video-Finale-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="hero-video w-background-video w-background-video-atom"><video id="4ab2ed98-7c32-7496-544f-6c253d9162c7-video" autoplay="" loop="" style="background-image:url(&quot;videos/Hero-Video-Finale-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
