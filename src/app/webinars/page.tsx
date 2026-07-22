@@ -6,7 +6,7 @@ import { getUpcomingWebinars, getPastWebinars } from "@/lib/webinars";
 export const metadata: Metadata = {
   title: "Webinars | AthleticTrainerJob.com",
   description:
-    "Free webinars for athletic trainers exploring military healthcare careers. Learn about H2F, SMIP, and career opportunities with PSI.",
+    "Free webinars for athletic trainers exploring military healthcare careers. Learn about H2F and career opportunities with PSI.",
   openGraph: {
     title: "Webinars | AthleticTrainerJob.com",
     description:
