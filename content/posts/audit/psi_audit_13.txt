@@ -1,0 +1,353 @@
+﻿---
+title: "SMIP vs H2F: Choosing the Right Military AT Program"
+slug: smip-vs-h2f-choosing-right-military-athletic-trainer-program
+description: "Compare SMIP and H2F athletic trainer programs side by side. Explore work settings, qualifications, salary, and career growth to find your best military AT fit."
+date: 2026-03-25
+updatedDate: 2026-03-25
+author: psi-editorial
+category: SMIP Program
+tags: ["SMIP athletic trainer", "H2F athletic trainer", "military athletic trainer jobs", "SMIP vs H2F comparison", "DOD athletic trainer", "Army H2F positions", "military sports medicine"]
+featuredImage: /images/blog/smip-vs-h2f-choosing-right-military-athletic-trainer-program.jpg
+featuredImageAlt: "Athletic trainer evaluating a service member's knee mobility in a military treatment facility clinic setting"
+readingTime: 13
+published: true
+featured: false
+seoTitle: "SMIP vs H2F: Choosing the Right Military AT Program | PSI Athletic Trainer Blog"
+seoDescription: "Compare SMIP and H2F programs for athletic trainers. Side-by-side analysis of work settings, pay, qualifications, and career paths in military healthcare."
+canonicalUrl: https://www.athletictrainerjob.com/blog/smip-vs-h2f-choosing-right-military-athletic-trainer-program
+ogImage: /images/blog/smip-vs-h2f-choosing-right-military-athletic-trainer-program-og.jpg
+schema: Article
+funnelStage: consideration
+primaryKeyword: SMIP vs H2F comparison
+relatedPosts: []
+---
+
+
+# SMIP vs H2F: Choosing the Right Military Athletic Trainer Program
+
+
+The U.S. military's investment in musculoskeletal health has created two distinct — and often misunderstood — career pathways for certified athletic trainers. If you are a BOC-certified athletic trainer evaluating your next move, understanding the differences between the Sports Medicine Integration Program (SMIP) and the Army's Holistic Health and Fitness (H2F) system is essential to making a decision that aligns with your clinical preferences, lifestyle goals, and long-term career trajectory.
+
+
+**What is the difference between SMIP and H2F for athletic trainers?** SMIP places athletic trainers in military treatment facilities (MTFs) where they deliver clinical sports medicine care under direct physician supervision. H2F embeds athletic trainers at the brigade unit level, focusing on injury prevention and physical readiness in operational environments. Both programs address the military's 2-million-plus annual musculoskeletal injuries, but through fundamentally different models of care delivery.
+
+
+This guide provides a thorough SMIP vs H2F comparison across every dimension that matters to your career: work environment, scope of practice, qualifications, compensation, duty stations, and long-term growth.
+
+
+## What Are SMIP and H2F? Understanding the Two Programs
+
+
+Before diving into the comparison, it helps to understand the origins, missions, and structures of each program independently.
+
+
+### SMIP Overview: Sports Medicine Integration in Military Treatment Facilities
+
+
+The Sports Medicine Integration Program places athletic trainers within military treatment facilities and clinic settings across Department of Defense installations. In this model, you work alongside military physicians, physician assistants, orthopedic surgeons, and physical therapists in a traditional sports medicine clinical environment.
+
+
+SMIP athletic trainers evaluate, treat, and rehabilitate service members presenting with musculoskeletal injuries. The work is hands-on and clinical — think orthopedic assessment, therapeutic exercise prescription, manual therapy techniques, and return-to-duty decision support. Your patients walk through the clinic door much like they would at a civilian sports medicine practice, though the population skews toward high-demand tactical athletes rather than weekend warriors.
+
+
+SMIP positions are typically staffed through medical staffing contractors, including PSI, that specialize in placing credentialed healthcare providers in military facilities.
+
+
+### H2F Overview: The Army's Holistic Health and Fitness System
+
+
+The Holistic Health and Fitness system represents the Army's primary investment in soldier readiness and lethality. Mandated by HQDA EXORD 144-21 and codified in AR 350-1, H2F is designed to embed interdisciplinary performance teams directly within brigade combat teams and equivalent units.
+
+
+Each H2F Performance Team includes approximately 14 professionals: athletic trainers, strength and conditioning coaches, physical therapists, occupational therapists, registered dietitians, and cognitive performance specialists. As an athletic trainer within H2F, you work at the unit level — in gyms, on training grounds, and sometimes during field exercises — rather than behind the doors of a clinic.
+
+
+The Army plans to stand up over 110 H2F Performance Teams across the force by FY2030, backed by $345 million in FY2023 NDAA authorization. This makes H2F one of the largest employers of athletic trainers in the federal contracting space.
+
+
+### How Both Programs Serve the Military's Injury Prevention Mission
+
+
+The U.S. military sustains more than 2 million musculoskeletal injuries annually, costing the DOD over $3.7 billion each year. Both SMIP and H2F exist to reduce that burden, but they attack the problem from different angles. SMIP addresses injuries after they occur (or as they present clinically), while H2F prioritizes prevention upstream — screening soldiers, modifying training loads, and intervening before an injury sidelines a warfighter. In practice, the two programs are complementary, and some installations host both.
+
+
+## SMIP vs H2F: Side-by-Side Comparison for Athletic Trainers
+
+
+The following table summarizes the key differences across dimensions most relevant to your decision-making process.
+
+
+| Dimension | SMIP | H2F |
+|---|---|---|
+| **Work Setting** | Military treatment facility / clinic | Unit-embedded (gyms, training areas, field) |
+| **Primary Mission** | Clinical evaluation, treatment, rehabilitation | Injury prevention, physical readiness optimization |
+| **Supervision Model** | Direct physician supervision in MTF | Clinical oversight by brigade PT or brigade surgeon |
+| **Team Composition** | Physicians, PAs, PTs, orthopedic staff | ATs, S&C coaches, PTs, OTs, dietitians, cognitive specialists |
+| **Typical Caseload** | Scheduled clinical appointments, walk-ins | Proactive screening, training integration, acute field care |
+| **Preferred Education** | Bachelor's or master's in AT | Master's degree often preferred |
+| **Credentialing** | State licensure + BOC + MTF privileging | BOC certification; credentialing varies by contract |
+| **Career Trajectory** | Clinical specialization, MTF leadership | Performance team lead, program management |
+
+
+### Work Environment: Clinic-Based vs Unit-Embedded
+
+
+This is the most consequential difference and should drive your decision more than any other factor.
+
+
+In SMIP, your workday takes place inside a military treatment facility. You have access to clinical equipment, imaging referral pathways, electronic health records, and a structured appointment schedule. The environment closely mirrors a civilian outpatient sports medicine clinic, with the added complexity of military-specific return-to-duty protocols.
+
+
+In H2F, your workplace is wherever the brigade trains. You may set up a treatment station in a battalion gym at 0600, conduct movement screens on a motor pool pad, or provide sideline coverage during a brigade-level physical fitness event. The work is dynamic, less predictable, and physically demanding. You spend significant time outdoors and may deploy to field training exercises for extended periods.
+
+
+<Callout type="tip">
+If you are energized by the pace and variety of sideline athletic training and enjoy building relationships with a defined population over time, the H2F embedded model may feel like a natural fit. If you prefer the diagnostic depth and clinical autonomy of an outpatient sports medicine practice, SMIP is more likely to satisfy your professional identity.
+</Callout>
+
+
+### Scope of Practice and Clinical Responsibilities
+
+
+SMIP athletic trainers operate within the full clinical scope of practice for athletic training. You conduct comprehensive orthopedic evaluations, apply manual therapy, prescribe therapeutic exercise programs, and manage rehabilitation progressions through return to duty. Because you work in an MTF, you also participate in clinical documentation, interdisciplinary case conferences, and quality improvement initiatives.
+
+
+H2F athletic trainers focus heavily on musculoskeletal screening (such as the FMS or Y-Balance), injury risk mitigation, acute injury management in training settings, and education for unit leadership on training load management. While H2F athletic trainers still evaluate and treat injuries, the emphasis shifts toward keeping soldiers out of the clinic in the first place.
+
+
+### Supervision Models and Interdisciplinary Teams
+
+
+In SMIP, you function under the direct supervision of a physician within the MTF. This means you have immediate access to a referring provider, which can streamline patient care and expand the complexity of cases you manage.
+
+
+In H2F, clinical oversight typically comes from the brigade physical therapist or brigade surgeon, but your day-to-day work is more autonomous. You are often the first and only healthcare provider a soldier encounters at the unit level, which means you must be confident in your clinical reasoning and comfortable making independent triage decisions.
+
+
+### Typical Caseload and Patient Population Differences
+
+
+SMIP caseloads reflect a clinic scheduling model. You may see 8 to 16 patients per day depending on the facility, with a mix of acute injuries, post-surgical rehab, and chronic musculoskeletal conditions. Your patient population spans all service branches and ranks assigned to that installation.
+
+
+H2F caseloads are less structured. On a given day, you might screen an entire company, manage three acute ankle sprains during a ruck march, and spend the afternoon educating platoon sergeants on progressive overload principles. Your population is the brigade — roughly 3,000 to 5,000 soldiers — and you get to know them deeply over the course of your assignment.
+
+
+<JobCTA location="Fort Liberty" program="SMIP" />
+
+
+## Qualifications and Requirements: What Each Program Expects
+
+
+### Education and Certification Requirements
+
+
+Both programs require BOC certification as a baseline. SMIP positions require at minimum a bachelor's degree in athletic training from a CAATE-accredited program, though the profession's transition to the master's degree entry level means newer candidates will hold graduate degrees.
+
+
+H2F positions frequently list a master's degree as preferred. Given the interdisciplinary nature of the performance team and the autonomous operational environment, hiring managers often favor candidates with advanced education in exercise science, human performance, or a related field in addition to the athletic training degree.
+
+
+### Licensure and Credentialing Differences
+
+
+Here is where the two programs diverge significantly.
+
+
+SMIP athletic trainers must hold or be eligible for state licensure in the state where the MTF is located. Beyond licensure, you undergo MTF-specific credentialing and privileging — a process that verifies your qualifications, delineates your clinical privileges, and integrates you into the facility's provider hierarchy. This process can take several weeks and requires documentation of continuing education, malpractice history, and clinical references.
+
+
+H2F credentialing requirements vary by prime contractor and installation. BOC certification is universally required. Some contracts require state licensure; others do not, depending on whether the athletic trainer's duties are classified as clinical care or performance optimization. Understanding this distinction before you apply is critical to ensuring a smooth onboarding experience.
+
+
+<Callout type="tip">
+Before accepting any position, ask the recruiter specifically about credentialing timelines and scope-of-practice documentation. In SMIP, request a copy of the athletic trainer privilege delineation for the specific MTF. In H2F, ask whether the contract classifies your role as clinical or non-clinical, as this affects your licensure obligations and liability exposure.
+</Callout>
+
+
+### Preferred Experience and Specialty Skills
+
+
+SMIP positions favor candidates with clinical experience in orthopedic or sports medicine settings. Experience with manual therapy techniques, post-operative rehabilitation, and electronic health record systems (such as MHS GENESIS) strengthens your candidacy.
+
+
+H2F positions value experience in tactical or occupational settings, functional movement screening, strength and conditioning integration, and group education or training program design. Prior military experience — either as a service member or as a DOD contractor — is often a significant differentiator.
+
+
+## Compensation, Benefits, and Contract Structures
+
+
+### Salary Ranges for SMIP vs H2F Athletic Trainer Positions
+
+
+Salaries for both programs depend on geographic location, cost of living adjustments, contractor company, and individual experience. That said, general ranges provide useful guidance.
+
+
+SMIP athletic trainer positions typically offer annual salaries between $55,000 and $75,000 for CONUS assignments, with OCONUS positions potentially reaching higher due to overseas allowances and tax advantages.
+
+
+H2F athletic trainer positions generally fall in a similar range, from $58,000 to $80,000, though compensation structures vary more widely across prime contractors. Some H2F contracts include performance bonuses or hazardous duty differentials for certain assignments.
+
+
+These figures are approximate. Actual compensation depends on the specific contract vehicle, and you should verify salary details during the offer stage.
+
+
+### Benefits Packages: Health Insurance, PTO, and Retirement
+
+
+Both SMIP and H2F contractor positions typically include health insurance, dental and vision coverage, paid time off, and federal holidays. Retirement benefits vary by employer — some offer 401(k) plans with employer matching, while others provide access to defined contribution plans.
+
+
+One important distinction: SMIP positions staffed through medical staffing contractors like PSI often include comprehensive benefits packages designed for healthcare professionals, including continuing education stipends and credentialing support. H2F benefits depend on the prime contractor (such as KBR, Leadpoint, or others) and can vary significantly between contracts.
+
+
+### Contract Length and Job Stability Considerations
+
+
+Federal contracts are rebid periodically, which introduces a degree of uncertainty in any contractor position. SMIP contracts tend to be associated with ongoing MTF staffing requirements, which may offer relatively stable employment as long as the installation maintains its sports medicine clinic. H2F contracts are tied to the Army's phased rollout plan, and while Congressional funding signals strong commitment, individual team standup timelines can shift.
+
+
+In either case, building a strong performance record and maintaining your credentials positions you well for contract transitions and rebids.
+
+
+## Duty Stations and Geographic Considerations
+
+
+### Where SMIP Positions Are Located
+
+
+SMIP positions exist at military treatment facilities across a broad range of installations. Major medical centers such as those at Fort Liberty (North Carolina), Joint Base San Antonio (Texas), Madigan Army Medical Center (Washington), and Walter Reed National Military Medical Center (Maryland) frequently maintain SMIP athletic trainer billets. Smaller installations with outpatient clinics may also have positions, though availability fluctuates with contract awards.
+
+
+### Current and Planned H2F Installation Rollout
+
+
+H2F Performance Teams are being stood up in phases, prioritizing Active Duty Brigade Combat Teams. Early implementations have focused on installations with high-density brigade footprints, including Fort Liberty, Fort Cavazos (Texas), Fort Campbell (Kentucky), Joint Base Lewis-McChord (Washington), and Fort Drum (New York). As the Army moves toward its goal of over 110 teams by FY2030, additional installations will come online, including National Guard and Reserve units.
+
+
+### OCONUS Opportunities in Each Program
+
+
+Both programs offer OCONUS opportunities, though SMIP has a longer track record of placing athletic trainers at overseas MTFs in locations such as Germany, Japan, South Korea, and Italy. H2F is beginning to expand to OCONUS units, but the majority of current positions remain CONUS. If overseas service is a priority for you, SMIP may offer more immediate opportunities.
+
+
+<Callout type="mission">
+PSI has supported military healthcare staffing for over two decades, placing athletic trainers, physical therapists, and other clinicians in military treatment facilities across the United States and overseas. The organization's focus is on matching qualified professionals with positions where they can deliver meaningful care to service members and their families.
+</Callout>
+
+
+<JobCTA location="Joint Base San Antonio" program="SMIP" />
+
+
+## Career Growth and Long-Term Trajectory
+
+
+### Advancement Opportunities Within Each Program
+
+
+SMIP offers a clinical career ladder. Over time, you can take on more complex caseloads, mentor junior athletic trainers, pursue specialty certifications (such as orthopedic manual therapy or dry needling), and potentially transition into a clinic coordinator or lead athletic trainer role within the MTF.
+
+
+H2F offers a performance optimization career ladder. Experienced athletic trainers can advance to H2F Performance Team lead positions, serve as subject-matter experts during new team standup, or move into program management roles that oversee multiple teams across a division or corps.
+
+
+### Transitioning Between SMIP and H2F
+
+
+The two programs are not mutually exclusive career paths. Athletic trainers who build clinical depth in SMIP often find that their diagnostic and treatment skills make them highly effective in H2F's autonomous environment. Conversely, athletic trainers with H2F experience bring a prevention-first mindset and population health perspective that enriches clinical practice in an MTF.
+
+
+If you are considering a transition from one program to the other, emphasize transferable skills on your resume: clinical evaluation proficiency (from SMIP) or movement screening and training integration experience (from H2F). Military-specific familiarity — understanding rank structure, training cycles, and military healthcare systems — is valued equally in both programs.
+
+
+### How Military AT Experience Translates to Civilian Career Paths
+
+
+Time in either program builds competencies that are highly portable. SMIP experience translates directly to civilian outpatient orthopedic and sports medicine clinics, hospital-based athletic training roles, and physician practice employment. H2F experience translates to occupational health, tactical performance, professional sports performance teams, and corporate wellness leadership.
+
+
+Both programs also position you for federal civilian (GS) employment. Athletic trainers with contractor experience and a strong understanding of military healthcare systems are competitive candidates for permanent GS positions within the Defense Health Agency.
+
+
+## Which Program Is Right for You? Decision Framework
+
+
+### Choose SMIP If You Prefer Clinical Sports Medicine Settings
+
+
+SMIP is the stronger fit if you value structured clinical environments, direct physician mentorship, hands-on patient care across the full rehabilitation continuum, and the diagnostic depth that comes with working in a medical facility. You should also lean toward SMIP if you hold or are pursuing specialty clinical certifications and want to practice at the top of your clinical license.
+
+
+### Choose H2F If You Thrive in Operational and Tactical Environments
+
+
+H2F is the stronger fit if you prefer autonomous practice, enjoy working outdoors and in dynamic settings, are passionate about injury prevention at the population level, and want to be part of an interdisciplinary performance team that extends beyond traditional healthcare. H2F also tends to appeal to athletic trainers with prior military service or a background in strength and conditioning.
+
+
+### Questions to Ask Recruiters Before Accepting an Offer
+
+
+Regardless of which program interests you, the following questions will help you evaluate a specific opportunity:
+
+
+- What is the credentialing and privileging timeline, and what documentation will I need to provide?
+- What is the supervision model, and who serves as my clinical overseer?
+- What does a typical workday and weekly schedule look like?
+- How does the contract handle PCS (permanent change of station) if the installation assignment changes?
+- What is the contract period of performance, and when is the next rebid anticipated?
+- Is continuing education supported financially, and is time off for CE events included?
+- What are the expectations for field training exercise support or OCONUS travel?
+
+
+<Callout type="tip">
+Write these questions down before your first conversation with a recruiter. The specificity of the answers you receive will tell you a great deal about the maturity of the program and the contractor's investment in their clinical staff.
+</Callout>
+
+
+## How to Apply for SMIP and H2F Athletic Trainer Positions
+
+
+### Current Open Positions and Hiring Timelines
+
+
+Both programs are actively hiring as of 2026. SMIP positions open on a rolling basis as MTF contracts are awarded or renewed. H2F hiring tends to occur in waves aligned with new team standup schedules. Monitoring job boards regularly and establishing relationships with recruiters ensures you see opportunities as they emerge.
+
+
+### Application Tips and Resume Optimization
+
+
+Tailor your resume to the specific program. For SMIP, highlight clinical hours, patient populations, rehabilitation outcomes, and any MTF or military healthcare experience. For H2F, emphasize screening and assessment tools, injury prevention programming, interdisciplinary collaboration, and experience working with tactical or military populations.
+
+
+In both cases, list your BOC certification number, state licensure details, and any additional credentials (CSCS, CES, OCS) prominently. Include your availability date and any geographic preferences or restrictions.
+
+
+### Working with PSI to Find Your Best Fit
+
+
+PSI specializes in placing athletic trainers and other healthcare professionals in military treatment facilities through SMIP and related medical staffing contracts. The organization's recruiting team understands the credentialing, privileging, and onboarding processes and can guide you through each step — from initial application to your first day on the job.
+
+
+If you are unsure which program aligns best with your goals, a conversation with a PSI recruiter can help clarify the differences in the context of currently available positions.
+
+
+<JobCTA location="Multiple Installations" program="SMIP" />
+
+
+<FAQ>
+  <FAQItem question="Can I work in both SMIP and H2F during my career?">
+    Yes. Many athletic trainers build experience in one program and transition to the other. Clinical skills developed in SMIP translate well to H2F's autonomous practice environment, and H2F's prevention-focused experience enriches clinical practice in an MTF. Contractor experience in either program also strengthens applications for federal GS positions.
+  </FAQItem>
+  <FAQItem question="Do SMIP and H2F athletic trainers work at the same installations?">
+    In some cases, yes. Large installations with both a military treatment facility and active brigade combat teams may host SMIP athletic trainers in the clinic and H2F athletic trainers embedded with units. Fort Liberty and Joint Base Lewis-McChord are examples of installations where both programs have operated simultaneously.
+  </FAQItem>
+  <FAQItem question="Is a master's degree required for H2F athletic trainer positions?">
+    A master's degree is not universally required but is frequently listed as preferred in H2F job postings. Given the profession's transition to the entry-level master's degree and the competitive nature of H2F hiring, holding a graduate degree strengthens your application. SMIP positions also increasingly favor master's-level candidates, though bachelor's-prepared athletic trainers with strong experience remain competitive.
+  </FAQItem>
+  <FAQItem question="Which program pays more — SMIP or H2F?">
+    Salary ranges for both programs are broadly comparable, typically falling between $55,000 and $80,000 for CONUS positions depending on location, contractor, and experience level. H2F positions may offer slightly higher base salaries at some installations, while SMIP positions staffed through specialized medical contractors like PSI may include more comprehensive benefits packages. Always evaluate total compensation — including health insurance, PTO, retirement contributions, and CE support — rather than base salary alone.
+  </FAQItem>
+  <FAQItem question="How long does credentialing take for SMIP positions?">
+    MTF credentialing and privileging for SMIP athletic trainer positions typically takes four to eight weeks, depending on the facility and the completeness of your application materials. Having your BOC certification, state licensure, malpractice insurance documentation, and clinical references organized in advance can significantly reduce delays. Your recruiter should provide a checklist and timeline early in the process.
+  </FAQItem>
+</FAQ>
