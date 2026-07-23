@@ -129,23 +129,46 @@
         </div>
       </div>
     </div>
-    <!-- Webinar Promo Banner (injected via JS to work with fixed navbar) -->
+    <!-- Webinar Promo Banner -->
+    <style>
+      #webinar-banner{background:linear-gradient(135deg,#0d2240,#1B3A5F);color:#fff;padding:8px 0;position:fixed;top:0;left:0;right:0;z-index:1000;border-bottom:2px solid #C41E2A;box-shadow:0 2px 8px rgba(0,0,0,0.3);}
+      #webinar-banner .wb-inner{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 16px;text-align:center;}
+      #webinar-banner .wb-badge{background:#C41E2A;color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:3px 8px;border-radius:3px;white-space:nowrap;}
+      #webinar-banner .wb-title{font-size:15px;font-weight:600;font-family:Poppins,sans-serif;}
+      #webinar-banner .wb-date{font-size:13px;opacity:0.85;font-family:Poppins,sans-serif;}
+      #webinar-banner .wb-cta{background:#C41E2A;color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:6px 16px;border-radius:5px;font-family:Poppins,sans-serif;white-space:nowrap;}
+      @media(max-width:640px){
+        #webinar-banner{padding:6px 0;}
+        #webinar-banner .wb-title{font-size:13px;}
+        #webinar-banner .wb-date{font-size:11px;}
+        #webinar-banner .wb-cta{font-size:12px;padding:5px 12px;}
+        #webinar-banner .wb-inner{gap:4px 10px;}
+      }
+    </style>
+    <div id="webinar-banner">
+      <div class="wb-inner">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="wb-badge">Free Webinar</span>
+          <span class="wb-title">Level Up Your ATC Career</span>
+        </div>
+        <span class="wb-date">Thu, July 30 &middot; 12:30 PM ET</span>
+        <a href="/webinars/level-up-your-atc-career" class="wb-cta">Register Free &rarr;</a>
+      </div>
+    </div>
     <script>
     (function(){
-      var b = document.createElement('div');
-      b.id = 'webinar-banner';
-      b.innerHTML = '<div style="max-width:1200px;margin:0 auto;padding:0 24px;"><div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px 20px;text-align:center;"><div style="display:flex;align-items:center;gap:8px;"><span style="background:#C41E2A;color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:3px 8px;border-radius:3px;white-space:nowrap;">Free Webinar</span><span style="font-size:15px;font-weight:600;font-family:Poppins,sans-serif;">Level Up Your ATC Career</span></div><span style="font-size:13px;opacity:0.85;font-family:Poppins,sans-serif;">Thu, July 30 &middot; 12:30 PM ET</span><a href="/webinars/level-up-your-atc-career" style="background:#C41E2A;color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:6px 16px;border-radius:5px;font-family:Poppins,sans-serif;white-space:nowrap;">Register Free &rarr;</a></div></div>';
-      b.style.cssText = 'background:linear-gradient(135deg,#0d2240 0%,#1B3A5F 100%);color:#fff;padding:10px 0;position:fixed;top:0;left:0;right:0;z-index:1000;border-bottom:2px solid #C41E2A;box-shadow:0 2px 8px rgba(0,0,0,0.3);';
-      document.addEventListener('DOMContentLoaded', function(){
-        document.body.prepend(b);
+      function adjustLayout(){
+        var b = document.getElementById('webinar-banner');
         var nav = document.querySelector('.navbar-no-shadow');
-        if(nav){
-          var bannerH = b.offsetHeight;
-          nav.style.top = bannerH + 'px';
-          var hero = document.querySelector('.section.is-hero');
-          if(hero) hero.style.paddingTop = (bannerH) + 'px';
-        }
-      });
+        if(!b || !nav) return;
+        var bannerH = b.offsetHeight;
+        var navH = nav.offsetHeight;
+        nav.style.top = bannerH + 'px';
+        var hero = document.querySelector('.section.is-hero');
+        if(hero) hero.style.paddingTop = (bannerH + navH) + 'px';
+      }
+      document.addEventListener('DOMContentLoaded', adjustLayout);
+      window.addEventListener('resize', adjustLayout);
     })();
     </script>
     <!-- End Webinar Promo Banner -->
