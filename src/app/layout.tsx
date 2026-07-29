@@ -20,14 +20,15 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-18172150443"
+          src="https://www.googletagmanager.com/gtag/js?id=G-EB93E0MYNJ"
           strategy="afterInteractive"
         />
-        <Script id="google-ads-gtag" strategy="afterInteractive">
+        <Script id="gtag-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+            gtag('config', 'G-EB93E0MYNJ');
             gtag('config', 'AW-18172150443');
           `}
         </Script>
