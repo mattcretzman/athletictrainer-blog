@@ -43,6 +43,8 @@ export async function generateMetadata({ params }: BlogPostProps): Promise<Metad
     ? frontmatter.ogImage // Use custom OG image if provided in frontmatter
     : `/og?title=${encodeURIComponent(frontmatter.title)}&category=${encodeURIComponent(frontmatter.category)}`;
 
+  const canonicalUrl = frontmatter.canonicalUrl || `https://www.athletictrainerjob.com/blog/${slug}`;
+
   return {
     title: frontmatter.seoTitle || frontmatter.title,
     description: frontmatter.seoDescription || frontmatter.description,
@@ -50,7 +52,7 @@ export async function generateMetadata({ params }: BlogPostProps): Promise<Metad
       title: frontmatter.seoTitle || frontmatter.title,
       description: frontmatter.seoDescription || frontmatter.description,
       type: "article",
-      url: frontmatter.canonicalUrl,
+      url: canonicalUrl,
       images: [
         {
           url: ogImageUrl,
@@ -71,7 +73,7 @@ export async function generateMetadata({ params }: BlogPostProps): Promise<Metad
       images: [ogImageUrl],
     },
     alternates: {
-      canonical: frontmatter.canonicalUrl,
+      canonical: canonicalUrl,
     },
   };
 }

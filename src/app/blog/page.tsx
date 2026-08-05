@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://www.athletictrainerjob.com/blog",
   },
+  alternates: {
+    canonical: "https://www.athletictrainerjob.com/blog",
+  },
 };
 
 export default async function BlogIndex({ searchParams }: BlogIndexProps) {
