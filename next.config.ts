@@ -38,6 +38,16 @@ const nextConfig: NextConfig = {
       fallback: [],
     };
   },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'blog.athletictrainerjob.com' }],
+        destination: 'https://www.athletictrainerjob.com/:path*',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
