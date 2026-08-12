@@ -254,14 +254,29 @@ export default async function WebinarPage({ params }: WebinarPageProps) {
                 </div>
               )}
 
-              {/* Transcript */}
-              {webinar.transcript && (
+              {/* Transcript Sections */}
+              {webinar.transcriptSections && webinar.transcriptSections.length > 0 && (
                 <div className="bg-warm-white rounded-xl border border-sand/30 p-8">
-                  <h2 className="text-2xl font-bold text-charcoal mb-6">
+                  <h2 className="text-2xl font-bold text-charcoal mb-2">
                     Full Transcript
                   </h2>
-                  <div className="prose prose-lg max-w-none text-graphite leading-relaxed whitespace-pre-line">
-                    {webinar.transcript}
+                  <p className="text-graphite/60 text-sm mb-8">
+                    The following is an auto-generated transcript of the webinar recording, organized by topic.
+                  </p>
+                  <div className="space-y-8">
+                    {webinar.transcriptSections.map((section, i) => (
+                      <div key={i} id={`transcript-${i}`}>
+                        <h3 className="text-xl font-bold text-charcoal mb-3 flex items-center gap-3">
+                          <span className="flex-shrink-0 w-8 h-8 bg-olive/10 rounded-full flex items-center justify-center text-olive text-sm font-bold">
+                            {i + 1}
+                          </span>
+                          {section.title}
+                        </h3>
+                        <p className="text-graphite leading-relaxed pl-11">
+                          {section.text}
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 </div>
               )}

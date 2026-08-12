@@ -23,16 +23,23 @@ export interface Webinar {
   youtubeId?: string;
   chapters?: WebinarChapter[];
   transcript?: string;
+  transcriptSections?: TranscriptSection[];
 }
 
 import { readFileSync } from "fs";
 import { join } from "path";
 
-function loadTranscript(filename: string): string {
+export interface TranscriptSection {
+  title: string;
+  text: string;
+}
+
+function loadTranscriptSections(filename: string): TranscriptSection[] {
   try {
-    return readFileSync(join(process.cwd(), "src", "lib", filename), "utf-8");
+    const raw = readFileSync(join(process.cwd(), "src", "lib", filename), "utf-8");
+    return JSON.parse(raw);
   } catch {
-    return "";
+    return [];
   }
 }
 
@@ -64,7 +71,7 @@ export function getWebinars(): Webinar[] {
       ],
       isPast: true,
       youtubeId: "RcaIz94LX7A",
-      transcript: loadTranscript("webinar-transcript-level-up.txt"),
+      transcriptSections: loadTranscriptSections("webinar-transcript-level-up.json"),
       chapters: [
         { time: "0:00", seconds: 0, title: "Welcome & Introductions" },
         { time: "3:37", seconds: 217, title: "Dr. Rosie Catanoso — What Is H2F?" },
