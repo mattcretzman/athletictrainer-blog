@@ -19,11 +19,15 @@ export async function generateMetadata({
   const webinar = getWebinarBySlug(slug);
   if (!webinar) return {};
 
+  const title = webinar.youtubeId
+    ? `${webinar.title} — Watch the Free Webinar Recording`
+    : `${webinar.title} | AthleticTrainerJob.com Webinar`;
+
   return {
-    title: `${webinar.title} | AthleticTrainerJob.com Webinar`,
+    title,
     description: webinar.description.slice(0, 160),
     openGraph: {
-      title: `${webinar.title} — Free Webinar`,
+      title,
       description: webinar.description.slice(0, 160),
       type: "website",
       url: `https://www.athletictrainerjob.com/webinars/${webinar.slug}`,
@@ -46,8 +50,34 @@ export default async function WebinarPage({ params }: WebinarPageProps) {
   const webinar = getWebinarBySlug(slug);
   if (!webinar) notFound();
 
+  const hasRecording = !!webinar.youtubeId;
+
   return (
     <>
+      {/* VideoObject Schema */}
+      {hasRecording && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "VideoObject",
+              name: webinar.title,
+              description: webinar.description,
+              thumbnailUrl: `https://img.youtube.com/vi/${webinar.youtubeId}/maxresdefault.jpg`,
+              uploadDate: webinar.date,
+              contentUrl: `https://www.youtube.com/watch?v=${webinar.youtubeId}`,
+              embedUrl: `https://www.youtube.com/embed/${webinar.youtubeId}`,
+              publisher: {
+                "@type": "Organization",
+                name: "Cognito Systems",
+                url: "https://www.athletictrainerjob.com",
+              },
+            }),
+          }}
+        />
+      )}
+
       {/* Hero */}
       <section className="bg-charcoal text-white py-16 md:py-24 topo-texture">
         <Container>
@@ -62,7 +92,11 @@ export default async function WebinarPage({ params }: WebinarPageProps) {
               All Webinars
             </Link>
 
-            {!webinar.isPast ? (
+            {hasRecording ? (
+              <span className="inline-block bg-olive text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
+                Watch the Recording
+              </span>
+            ) : !webinar.isPast ? (
               <span className="inline-block bg-red text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
                 Free Live Webinar
               </span>
@@ -93,20 +127,39 @@ export default async function WebinarPage({ params }: WebinarPageProps) {
               </span>
               <span className="flex items-center gap-2">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
-                {webinar.time}
+                {hasRecording ? "45 min recording" : webinar.time}
               </span>
               <span className="flex items-center gap-2">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
-                Microsoft Teams
+                Hosted by Dr. Rosie Catanoso
               </span>
             </div>
           </div>
         </Container>
       </section>
+
+      {/* Video Embed */}
+      {hasRecording && (
+        <section className="bg-charcoal pb-12">
+          <Container>
+            <div className="max-w-4xl mx-auto">
+              <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full rounded-xl shadow-2xl"
+                  src={`https://www.youtube.com/embed/${webinar.youtubeId}?rel=0`}
+                  title={webinar.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </Container>
+        </section>
+      )}
 
       {/* Content */}
       <section className="py-12 md:py-16 bg-stone">
@@ -117,18 +170,45 @@ export default async function WebinarPage({ params }: WebinarPageProps) {
               {/* About */}
               <div className="bg-warm-white rounded-xl border border-sand/30 p-8 mb-8">
                 <h2 className="text-2xl font-bold text-charcoal mb-4">
-                  About This Webinar
+                  {hasRecording ? "About This Webinar" : "About This Webinar"}
                 </h2>
                 <p className="text-graphite leading-relaxed text-lg">
                   {webinar.description}
                 </p>
               </div>
 
+              {/* Chapters */}
+              {webinar.chapters && webinar.chapters.length > 0 && (
+                <div className="bg-warm-white rounded-xl border border-sand/30 p-8 mb-8">
+                  <h2 className="text-2xl font-bold text-charcoal mb-6">
+                    Jump to a Section
+                  </h2>
+                  <div className="space-y-3">
+                    {webinar.chapters.map((chapter, i) => (
+                      <a
+                        key={i}
+                        href={`https://www.youtube.com/watch?v=${webinar.youtubeId}&t=${chapter.seconds}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-4 p-3 rounded-lg hover:bg-stone transition-colors group"
+                      >
+                        <span className="flex-shrink-0 w-16 text-center font-mono text-sm text-olive font-bold bg-olive/10 py-1 px-2 rounded">
+                          {chapter.time}
+                        </span>
+                        <span className="text-graphite group-hover:text-charcoal transition-colors">
+                          {chapter.title}
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* Topics */}
               {webinar.topics.length > 0 && (
                 <div className="bg-warm-white rounded-xl border border-sand/30 p-8 mb-8">
                   <h2 className="text-2xl font-bold text-charcoal mb-6">
-                    What You'll Learn
+                    What You&#39;ll Learn
                   </h2>
                   <ul className="space-y-4">
                     {webinar.topics.map((topic, i) => (
@@ -147,7 +227,7 @@ export default async function WebinarPage({ params }: WebinarPageProps) {
 
               {/* Speakers */}
               {webinar.speakers.length > 0 && (
-                <div className="bg-warm-white rounded-xl border border-sand/30 p-8">
+                <div className="bg-warm-white rounded-xl border border-sand/30 p-8 mb-8">
                   <h2 className="text-2xl font-bold text-charcoal mb-6">
                     {webinar.speakers.length === 1 ? "Your Host" : "Speakers"}
                   </h2>
@@ -173,54 +253,92 @@ export default async function WebinarPage({ params }: WebinarPageProps) {
                   </div>
                 </div>
               )}
+
+              {/* Transcript */}
+              {webinar.transcript && (
+                <div className="bg-warm-white rounded-xl border border-sand/30 p-8">
+                  <h2 className="text-2xl font-bold text-charcoal mb-6">
+                    Full Transcript
+                  </h2>
+                  <div className="prose prose-lg max-w-none text-graphite leading-relaxed whitespace-pre-line">
+                    {webinar.transcript}
+                  </div>
+                </div>
+              )}
             </div>
 
-            {/* Sidebar — Registration CTA */}
+            {/* Sidebar */}
             <div className="lg:col-span-1">
               <div className="bg-navy rounded-xl p-8 text-white sticky top-24">
-                <h3 className="text-xl font-bold mb-2">
-                  {webinar.isPast ? "This Event Has Ended" : "Register Now — It's Free"}
-                </h3>
-                <p className="text-white/70 text-sm mb-6">
-                  {webinar.isPast
-                    ? "This webinar has already taken place."
-                    : "Save your spot for this free live webinar. Limited availability."}
-                </p>
+                {hasRecording ? (
+                  <>
+                    <h3 className="text-xl font-bold mb-2">
+                      Ready to Take the Next Step?
+                    </h3>
+                    <p className="text-white/70 text-sm mb-6">
+                      Explore current athletic trainer positions with the Army H2F and USMC SMIP programs.
+                    </p>
+                    <a
+                      href="/job-description"
+                      className="block w-full text-center bg-red hover:bg-red/90 text-white font-bold py-4 px-6 rounded-lg transition-colors text-lg mb-4"
+                    >
+                      Apply Now &#10140;
+                    </a>
+                    <a
+                      href={`https://www.youtube.com/watch?v=${webinar.youtubeId}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full text-center bg-white/10 hover:bg-white/20 text-white font-semibold py-3 px-6 rounded-lg transition-colors text-sm"
+                    >
+                      Watch on YouTube
+                    </a>
+                  </>
+                ) : (
+                  <>
+                    <h3 className="text-xl font-bold mb-2">
+                      {webinar.isPast ? "This Event Has Ended" : "Register Now — It\u2019s Free"}
+                    </h3>
+                    <p className="text-white/70 text-sm mb-6">
+                      {webinar.isPast
+                        ? "This webinar has already taken place."
+                        : "Save your spot for this free live webinar. Limited availability."}
+                    </p>
+                    {!webinar.isPast && (
+                      <a
+                        href={webinar.registrationUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full text-center bg-red hover:bg-red/90 text-white font-bold py-4 px-6 rounded-lg transition-colors text-lg"
+                      >
+                        Register for Free &#10140;
+                      </a>
+                    )}
+                  </>
+                )}
 
-                <div className="space-y-3 mb-6 text-sm">
+                <div className="space-y-3 mt-6 text-sm">
                   <div className="flex items-center gap-3 text-white/80">
                     <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
-                    {formatDate(webinar.date)}
+                    Recorded {formatDate(webinar.date)}
                   </div>
                   <div className="flex items-center gap-3 text-white/80">
                     <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    {webinar.time}
+                    45 minutes
                   </div>
                   <div className="flex items-center gap-3 text-white/80">
                     <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z" />
                     </svg>
-                    Free — Online via Microsoft Teams
+                    Free — Watch Anytime
                   </div>
                 </div>
 
-                {!webinar.isPast && (
-                  <a
-                    href={webinar.registrationUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full text-center bg-red hover:bg-red/90 text-white font-bold py-4 px-6 rounded-lg transition-colors text-lg"
-                  >
-                    Register for Free &#10140;
-                  </a>
-                )}
-
-                <p className="text-white/50 text-xs mt-4 text-center">
-                  Hosted by Planned Systems International
+                <p className="text-white/50 text-xs mt-6 text-center">
+                  Hosted by Cognito Systems
                 </p>
               </div>
             </div>
@@ -229,37 +347,36 @@ export default async function WebinarPage({ params }: WebinarPageProps) {
       </section>
 
       {/* Bottom CTA */}
-      {!webinar.isPast && (
-        <section className="py-12 bg-parchment border-t border-sand/30">
-          <Container>
-            <div className="text-center max-w-2xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-bold text-charcoal mb-4">
-                Ready to Level Up Your Career?
-              </h2>
-              <p className="text-graphite mb-8">
-                Join this free webinar to learn how your athletic training skills
-                can make a difference in military health and performance.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href={webinar.registrationUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-navy hover:bg-navy/90 text-white font-bold py-4 px-8 rounded-lg transition-colors text-lg"
-                >
-                  Register for the Webinar &#10140;
-                </a>
-                <Link
-                  href="/job-description"
-                  className="inline-flex items-center justify-center gap-2 bg-warm-white hover:bg-white text-charcoal font-semibold py-4 px-8 rounded-lg border border-sand/50 transition-colors"
-                >
-                  View Open Positions
-                </Link>
-              </div>
+      <section className="py-12 bg-parchment border-t border-sand/30">
+        <Container>
+          <div className="text-center max-w-2xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-charcoal mb-4">
+              {hasRecording
+                ? "Ready to Start Your H2F Career?"
+                : "Ready to Level Up Your Career?"}
+            </h2>
+            <p className="text-graphite mb-8">
+              {hasRecording
+                ? "Cognito Systems is actively hiring BOC-certified athletic trainers for H2F and SMIP positions at 25+ military installations across the country."
+                : "Join this free webinar to learn how your athletic training skills can make a difference in military health and performance."}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/job-description"
+                className="inline-flex items-center justify-center gap-2 bg-navy hover:bg-navy/90 text-white font-bold py-4 px-8 rounded-lg transition-colors text-lg"
+              >
+                View Open Positions &#10140;
+              </a>
+              <Link
+                href="/blog"
+                className="inline-flex items-center justify-center gap-2 bg-warm-white hover:bg-white text-charcoal font-semibold py-4 px-8 rounded-lg border border-sand/50 transition-colors"
+              >
+                Read Career Guides
+              </Link>
             </div>
-          </Container>
-        </section>
-      )}
+          </div>
+        </Container>
+      </section>
     </>
   );
 }

@@ -1,3 +1,9 @@
+export interface WebinarChapter {
+  time: string; // e.g. "0:00"
+  seconds: number;
+  title: string;
+}
+
 export interface Webinar {
   slug: string;
   title: string;
@@ -14,6 +20,20 @@ export interface Webinar {
   topics: string[];
   isPast: boolean;
   featuredImage?: string;
+  youtubeId?: string;
+  chapters?: WebinarChapter[];
+  transcript?: string;
+}
+
+import { readFileSync } from "fs";
+import { join } from "path";
+
+function loadTranscript(filename: string): string {
+  try {
+    return readFileSync(join(process.cwd(), "src", "lib", filename), "utf-8");
+  } catch {
+    return "";
+  }
 }
 
 export function getWebinars(): Webinar[] {
@@ -42,7 +62,21 @@ export function getWebinars(): Webinar[] {
         "Benefits, compensation, and growth opportunities",
         "Q&A with the Cognito Systems team",
       ],
-      isPast: false,
+      isPast: true,
+      youtubeId: "RcaIz94LX7A",
+      transcript: loadTranscript("webinar-transcript-level-up.txt"),
+      chapters: [
+        { time: "0:00", seconds: 0, title: "Welcome & Introductions" },
+        { time: "3:37", seconds: 217, title: "Dr. Rosie Catanoso — What Is H2F?" },
+        { time: "5:16", seconds: 316, title: "The Five Domains of Soldier Readiness" },
+        { time: "10:22", seconds: 622, title: "What Athletic Trainers Do in H2F" },
+        { time: "13:04", seconds: 784, title: "A Day in the Life of an H2F Athletic Trainer" },
+        { time: "17:05", seconds: 1025, title: "How to Transition Into H2F" },
+        { time: "19:36", seconds: 1176, title: "Benefits of Working in H2F" },
+        { time: "22:36", seconds: 1356, title: "Current & Future AT Opportunities" },
+        { time: "25:49", seconds: 1549, title: "Q&A with the Team" },
+        { time: "44:23", seconds: 2663, title: "Closing Remarks" },
+      ],
     },
   ];
 }
