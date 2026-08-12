@@ -287,7 +287,7 @@ export default async function WebinarPage({ params }: WebinarPageProps) {
               <div className="bg-navy rounded-xl p-8 text-white sticky top-24">
                 {hasRecording ? (
                   <>
-                    <h3 className="text-xl font-bold mb-2">
+                    <h3 className="text-xl font-bold mb-2 text-white">
                       Ready to Take the Next Step?
                     </h3>
                     <p className="text-white/70 text-sm mb-6">
