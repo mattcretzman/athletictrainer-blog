@@ -1,30 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const WEBHOOK_URL =
-  process.env.N8N_WEBHOOK_URL ??
-  "https://leadstorm.app.n8n.cloud/webhook/psi-recruitment-submission";
+const RAILWAY_URL =
+  process.env.FORM_WEBHOOK_URL ??
+  "https://psi-form-server-production.up.railway.app/api/form-submission";
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
 
     const payload = {
-      payload: {
-        data: {
-          "Full Name": body["Full Name"] ?? "",
-          Email: body["Email"] ?? "",
-          Phone: body["Phone"] ?? "",
-          Certification: body["Certification"] ?? "",
-          base_locations: body["base_locations"] ?? "",
-          "Years Experience": body["Years Experience"] ?? "",
-          Time: body["Time"] ?? "",
-          "Heard About": body["Heard About"] ?? "",
-          File: body["File"] ?? "",
-        },
-      },
+      "Full-Name": body["Full Name"] ?? "",
+      Email: body["Email"] ?? "",
+      Phone: body["Phone"] ?? "",
+      Certification: body["Certification"] ?? "",
+      "Years-Experience": body["Years Experience"] ?? "",
+      base_locations: body["base_locations"] ?? "",
+      Time: body["Time"] ?? "",
+      "Heard-About": body["Heard About"] ?? "",
     };
 
-    const res = await fetch(WEBHOOK_URL, {
+    const res = await fetch(RAILWAY_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
@@ -32,7 +27,7 @@ export async function POST(request: NextRequest) {
 
     if (!res.ok) {
       return NextResponse.json(
-        { error: "Webhook failed", status: res.status },
+        { error: "Form server failed", status: res.status },
         { status: 502 }
       );
     }
