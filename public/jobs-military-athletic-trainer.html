@@ -106,9 +106,18 @@
                   <div class="label-wrap"><label for="phone" class="field-label">Phone <span class="required-text">*</span></label><input class="text-field w-input" maxlength="256" name="Phone" placeholder="Phone" type="tel" id="phone" required=""></div>
                   <div class="label-wrap"><label for="certification" class="field-label">Certification <span class="required-text">*</span></label><select id="certification" name="Certification" required="" class="select-field w-select"><option value="BOC Certified Athletic Trainer">BOC Certified Athletic Trainer</option><option value="Recently Graduated, Pending Certification">Recently Graduated, Pending Certification</option><option value="Athletic Training Student">Athletic Training Student</option><option value="Other">Other</option></select></div>
                   <div class="label-wrap"><label for="years-experience" class="field-label">Years of Experience <span class="required-text">*</span></label><select id="years-experience" name="Years-Experience" required="" class="select-field w-select"><option value="2-4 Years">2-4 Years</option><option value="0-1 Year">0-1 Year</option><option value="5 + Years">5 + Years</option></select></div>
+                  <div class="label-wrap"><label for="program-select" class="field-label">Location <span class="required-text">*</span></label><select id="program-select" name="Programs" required="" class="select-field w-select">
+                    <option value="">Select Base Location</option>
+                    <option value="usmc-current">Current USMC TECOM SMIP Base Locations</option>
+                    <option value="usmc-forecasted">Forecasted USMC TECOM SMIP Base Locations</option>
+                    <option value="army-current">Current Army H2F Base Locations</option>
+                  </select>
+                  <div id="base-locations-wrapper"></div>
+                  <input type="hidden" name="base_locations" id="base-locations-value">
+                  </div>
                   <div class="label-wrap"><label for="time" class="field-label">Best Time to Contact <span class="required-text">*</span></label><select id="time" name="Time" required="" class="select-field w-select"><option value="Anytime">Anytime</option><option value="Morning (9am-12pm ET)">Morning (9am-12pm ET)</option><option value="Afternoon (12pm-5pm ET)">Afternoon (12pm-5pm ET)</option><option value="Evening (5pm-8pm ET)">Evening (5pm-8pm ET)</option></select></div>
                   <div class="label-wrap"><label for="heard-about" class="field-label">How did you hear about us? <span class="required-text">*</span></label><select id="heard-about" name="Heard About" required="" class="select-field w-select"><option value="">Select...</option><option value="LinkedIn">LinkedIn</option><option value="Email">Email</option><option value="Google Search">Google Search</option><option value="Instagram">Instagram</option><option value="Referral / Word of Mouth">Referral / Word of Mouth</option><option value="H2F Webinar">H2F Webinar</option><option value="Job Board">Job Board</option><option value="Other">Other</option></select></div>
-                  <input type="hidden" name="base_locations" id="base-locations-value" value="Military AT - From Landing Page">
+                  <input type="hidden" name="landing_page" value="Military AT Landing Page">
                   <input type="submit" class="primary-button w-button" value="See Open Positions &#10140;">
                 </form>
                 <div class="w-form-done"><div>Thank you! Your submission has been received!</div></div>
@@ -160,7 +169,107 @@
       submitBtn.disabled = false;
     });
   });
+  // Base location picker
+  var programSelect = document.getElementById('program-select');
+  var wrapper = document.getElementById('base-locations-wrapper');
+  var hiddenInput = document.getElementById('base-locations-value');
+  var baseLocations = {
+    "usmc-current": [
+      "California – Camp Mateo – Camp Pendleton",
+      "California – Marine Corps Mountain Warfare Training Center – Bridgeport",
+      "California – Camp Horno – Camp Pendleton",
+      "California – Marine Corps Base Camp Pendleton – Oceanside",
+      "California – Marine Corps Air Ground Combat Center – Twentynine Palms",
+      "California – Marine Corps Air Station Miramar – San Diego",
+      "Hawaii – Marine Corps Base Hawaii – Kaneohe Bay",
+      "Japan – Marine Corps Air Station Iwakuni – Iwakuni",
+      "Japan – Camp Hansen / Camp Courtney – Okinawa",
+      "Japan – Camp Schwab – Okinawa",
+      "North Carolina – Marine Corps Air Station Cherry Point – Havelock",
+      "North Carolina – Marine Corps Air Station New River – Jacksonville",
+      "North Carolina – Marine Corps Base Camp Lejeune – Jacksonville",
+      "Virginia – Marine Corps Base Quantico – Quantico"
+    ],
+    "usmc-forecasted": [
+      "Arizona – Marine Corps Air Station Yuma – Yuma",
+      "California – Camp Del Mar – Camp Pendleton",
+      "California – Marine Corps Recruit Depot San Diego – San Diego",
+      "Florida – Naval Air Station Pensacola – Pensacola",
+      "Missouri – Marine Detachment Fort Leonard Wood – Fort Leonard Wood",
+      "Oklahoma – Marine Detachment Fort Sill – Lawton",
+      "Japan – Camp Foster – Okinawa",
+      "Japan – Camp Kinser – Okinawa",
+      "Japan – Marine Corps Air Station Futenma – Okinawa",
+      "South Carolina – Marine Corps Air Station Beaufort – Beaufort",
+      "South Carolina – Marine Corps Recruit Depot Parris Island – Parris Island"
+    ],
+    "army-current": [
+      "Alaska – Fort Wainwright – Fairbanks",
+      "Alaska – Joint Base Elmendorf-Richardson (JBER) – Anchorage",
+      "Arizona – Fort Huachuca – Sierra Vista",
+      "Georgia – Fort Stewart – Hinesville",
+      "Georgia – Fort Moore (formerly Fort Benning) – Columbus",
+      "Kentucky – Fort Knox – Radcliff",
+      "Kentucky/Tennessee – Fort Campbell – Hopkinsville / Clarksville",
+      "Kansas – Fort Riley – Manhattan",
+      "Louisiana – Fort Polk – Leesville",
+      "New York – Fort Drum – Watertown",
+      "North Carolina – Fort Liberty – Fayetteville",
+      "South Carolina – Fort Jackson – Columbia",
+      "Texas – Fort Bliss – El Paso",
+      "Washington – Joint Base Lewis-McChord (JBLM) – Tacoma"
+    ]
+  };
+  function updateSelected() {
+    var selected = Array.from(document.querySelectorAll('input[name="base-location-check"]:checked')).map(function(cb) { return cb.value; });
+    hiddenInput.value = selected.join(", ");
+  }
+  if (programSelect) {
+    programSelect.addEventListener("change", function() {
+      var selected = this.value;
+      wrapper.innerHTML = "";
+      hiddenInput.value = "";
+      if (selected && baseLocations[selected]) {
+        var heading = document.createElement("h5");
+        heading.textContent = "Select Locations";
+        heading.style.color = "white";
+        heading.style.marginBottom = "10px";
+        wrapper.appendChild(heading);
+        baseLocations[selected].forEach(function(location, index) {
+          var label = document.createElement("label");
+          label.setAttribute("for", "base-" + index);
+          label.style.display = "flex";
+          label.style.alignItems = "center";
+          label.style.background = "#1f1f1f";
+          label.style.color = "white";
+          label.style.padding = "8px 12px";
+          label.style.margin = "4px";
+          label.style.borderRadius = "12px";
+          label.style.cursor = "pointer";
+          label.style.flexWrap = "wrap";
+          var checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.value = location;
+          checkbox.id = "base-" + index;
+          checkbox.name = "base-location-check";
+          checkbox.style.marginRight = "6px";
+          checkbox.addEventListener("change", updateSelected);
+          label.appendChild(checkbox);
+          label.appendChild(document.createTextNode(location));
+          wrapper.appendChild(label);
+        });
+      }
+    });
+    // Auto-trigger for pre-selected pages
+    if (programSelect.value) {
+      programSelect.dispatchEvent(new Event('change'));
+    }
+  }
 })();
 </script>
+<style>
+#program-select { font-weight: 500; font-size: 15px; }
+#base-locations-wrapper { margin-top: 20px; }
+</style>
 </body>
 </html>
