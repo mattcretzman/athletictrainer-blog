@@ -51,11 +51,32 @@
     "image": satelliteImg(-98.4031, 34.6495, 13)
   },
   {
-    "name": "Fort Cavazos",
-    "optionLabel": "• Fort Cavazos – Killeen, TX",
+    "name": "Fort Hood",
+    "optionLabel": "• Fort Hood – Killeen, TX",
     "coordinates": [-97.7736, 31.1388],
-    "description": "Fort Cavazos (formerly Fort Hood) is the largest U.S. Army installation in the world by area, located near Killeen, Texas. Home to the 1st Cavalry Division and III Armored Corps, it covers over 214,000 acres and houses more than 45,000 active-duty soldiers, making it a cornerstone of Army armored and aviation readiness.",
+    "description": "Fort Hood is the largest U.S. Army installation in the world by area, located near Killeen, Texas. Home to the 1st Cavalry Division and III Armored Corps, it covers over 214,000 acres and houses more than 45,000 active-duty soldiers, making it a cornerstone of Army armored and aviation readiness.",
     "image": satelliteImg(-97.7736, 31.1388, 11)
+  },
+  {
+    "name": "Fort Rucker",
+    "optionLabel": "• Fort Rucker – Dale County, AL",
+    "coordinates": [-85.7128, 31.3428],
+    "description": "Fort Rucker, near Enterprise and Ozark in southeastern Alabama, is home to the U.S. Army Aviation Center of Excellence. It trains the Army's helicopter pilots and aviation support personnel and hosts Lyster Army Health Clinic and the Army Aeromedical Research Laboratory.",
+    "image": satelliteImg(-85.7128, 31.3428, 12)
+  },
+  {
+    "name": "Fort Lee",
+    "optionLabel": "• Fort Lee – Prince George County, VA",
+    "coordinates": [-77.3339, 37.2447],
+    "description": "Fort Lee, near Petersburg, Virginia, is home to the U.S. Army Combined Arms Support Command and the Quartermaster, Ordnance, and Transportation schools. It is the Army's center for sustainment training, with tens of thousands of soldiers passing through each year.",
+    "image": satelliteImg(-77.3339, 37.2447, 12)
+  },
+  {
+    "name": "Fort Eustis",
+    "optionLabel": "• Fort Eustis – Newport News, VA",
+    "coordinates": [-76.5824, 37.1544],
+    "description": "Fort Eustis, part of Joint Base Langley-Eustis in Newport News, Virginia, is home to the U.S. Army Training and Doctrine Command and the Army's transportation and aviation logistics training. It sits on the James River in the Hampton Roads region.",
+    "image": satelliteImg(-76.5824, 37.1544, 12)
   }
 ];
 
