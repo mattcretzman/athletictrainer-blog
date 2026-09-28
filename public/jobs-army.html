@@ -151,7 +151,8 @@
       'base_locations': form.querySelector('#base-locations-value').value,
       'Time': form.querySelector('#time').value,
       'Heard About': form.querySelector('#heard-about').value,
-      'File': ''
+      'File': '',
+      'Attribution': (window.psiAttribution ? window.psiAttribution() : {})
     };
     fetch('/api/submit', {
       method: 'POST',
@@ -271,5 +272,6 @@
 #program-select { font-weight: 500; font-size: 15px; }
 #base-locations-wrapper { margin-top: 20px; }
 </style>
+  <script src="/js/attribution.js"></script>
 </body>
 </html>
